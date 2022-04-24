@@ -71,9 +71,11 @@ console.log("Your score: " + humanScore + " " + "Computer score: " + computerSco
 function game() {
 
 //--new for...in Loop for an iteration--
+
 for (let i = 0; i < 4; i++) {
 
 //no need to define user's and computer's choices again, just assigning here
+
   text = (prompt("Please enter your choice: e.g. rock, paper or scissors")); //user enters choice in a pop-up box
   playerSelection = text.toLowerCase(); // case-insensitive player choice
   console.log (`You choose ${playerSelection}`); //show user's choice in lowercase letters
@@ -88,6 +90,7 @@ for (let i = 0; i < 4; i++) {
 }
 
 //New variable should be defined for the game result
+
 let totalScore = humanScore + computerScore; //Final score is the sum of the user's and computer's scores
 
 //--new conditional for comparison--
@@ -108,6 +111,13 @@ if (humanScore>computerScore && totalScore != 0){
   else {
     return "Sorry, You should make a meaningful choice: e.g. rock, paper or scissors";
   }
-  
+
 }
+
+//Showing the Final game results in the console
+
+console.log(game()); //play the loop
+
+console.log("YOUR FINAL SCORE: " + humanScore + " " + "COMPUTER'S FINAL SCORE: " + computerScore);
+
 
