@@ -7,4 +7,7 @@ function computerPlay() {
   return result;
 }
 
+//Define a function for a single round in the game
+//User's choice will be compared by computer's selection
 
+function playRound(playerSelection, computerSelection) { //2 different parameters will be used for the comparison inside the function
