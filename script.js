@@ -1,3 +1,4 @@
+//--------------new function---------------------
 //Define a function allowing the computer make a choice among rock, paper and scissors
 //Computer choice is triggered by function defined
 
@@ -7,13 +8,36 @@ function computerPlay() {
   return result;
 }
 
+//--------------new function---------------------
 //Define a function for a single round in the game
 //User's choice will be compared by computer's selection
 
 function playRound(playerSelection, computerSelection) { //2 different parameters will be used for the comparison inside the function
+  
+//--new conditional for comparison--
+
+//User will win if below mentioned conditions occur
+  if (playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper"){
+    humanScore++; //humanScore variable will be defined in order to both increase and compare User's score
+    return win; //win variable will be defined in order to show the result of the round if user wins
+  }
+//User will lose if below mentioned conditions occur
+  else if (playerSelection=="rock" && computerSelection=="paper" || playerSelection=="scissors" && computerSelection=="rock" || playerSelection=="paper" && computerSelection=="scissors"){
+    computerScore++;//computerScore variable will be defined in order to both increase and compare Computer's score
+    return lose;//lose variable will be defined in order to show the result of the round if user loses
+  }
+//Neither side will win or lose if below mentioned condition occur
+    else if (playerSelection == computerSelection){
+    //no need to define a tieScore in a 5 round game
+    return tie;//tie variable will be defined in order to show the result of the round if neither side wins or loses
+  }
+//User should be warned if he/she does not enter a value or makes a choice other than rock, paper or scissors
+  else {
+    return "You must write down rock, paper or scissors! Please try again.\n-----Round End-----";
+  }
 }
 
-//Parameters should be defined and
+//Function playRound() Parameters should be defined
 //A pop-up box will be provided for the user enter his/her choice
 
 let text = (prompt("Please enter your choice: e.g. rock, paper or scissors")); //user enters choice in a pop-up box
