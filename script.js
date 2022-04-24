@@ -46,3 +46,16 @@ console.log (`You choose ${playerSelection}`); //show user's choice in lowercase
 
 let computerSelection = computerPlay();  //declaring a randomly selected choice by computer
 console.log(`The computer chooses ${computerSelection}`);//show computer's choice
+
+//Score variables should be defined
+
+let humanScore = 0;
+let computerScore = 0;
+
+//Round-game result variables should be defined
+
+const win="You Won this round!\n-----Round End-----";
+const lose="You Lost this round!\n-----Round End-----";
+const tie= "This round is a tie!\n-----Round End-----";
+
+
