@@ -87,3 +87,6 @@ for (let i = 0; i < 4; i++) {
   console.log("Your score: " + humanScore + " " + "Computer score: " + computerScore);//The score will be counted again and again
 
 }
+
+//New variable should be defined for the game result
+let totalScore = humanScore + computerScore;
