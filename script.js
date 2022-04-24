@@ -119,5 +119,3 @@ if (humanScore>computerScore && totalScore != 0){
 console.log(game()); //play the loop
 
 console.log("YOUR FINAL SCORE: " + humanScore + " " + "COMPUTER'S FINAL SCORE: " + computerScore);
-
-
