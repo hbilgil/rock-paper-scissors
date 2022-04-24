@@ -64,5 +64,9 @@ console.log(playRound(playerSelection, computerSelection)); //Single round resul
 
 console.log("Your score: " + humanScore + " " + "Computer score: " + computerScore);//The score will be counted according to the single round result
 
+//--------------new function---------------------
+//Define a function for looping a 5 round game
+//Final result and score will be defined too
 
-
+function game() {
+}
