@@ -58,4 +58,11 @@ const win="You Won this round!\n-----Round End-----";
 const lose="You Lost this round!\n-----Round End-----";
 const tie= "This round is a tie!\n-----Round End-----";
 
+//Showing the Round-game results in the console
+
+console.log(playRound(playerSelection, computerSelection)); //Single round result will be shown
+
+console.log("Your score: " + humanScore + " " + "Computer score: " + computerScore);//The score will be counted according to the single round result
+
+
 
