@@ -41,5 +41,8 @@ function playRound(playerSelection, computerSelection) { //2 different parameter
 //A pop-up box will be provided for the user enter his/her choice
 
 let text = (prompt("Please enter your choice: e.g. rock, paper or scissors")); //user enters choice in a pop-up box
-let playerSelection = text.toLowerCase(); // case-insensitive player choice converts a string to lowercase letters to be compared by computer's choice successfully
+let playerSelection = text.toLowerCase(); //case-insensitive player choice converts a string to lowercase letters to be compared by computer's choice successfully
+console.log (`You choose ${playerSelection}`); //show user's choice in lowercase
+
 let computerSelection = computerPlay();  //declaring a randomly selected choice by computer
+console.log(`The computer chooses ${computerSelection}`);//show computer's choice
