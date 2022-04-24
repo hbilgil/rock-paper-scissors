@@ -73,5 +73,10 @@ function game() {
 
 //--new for...in Loop for an iteration--
 for (let i = 0; i < 4; i++) {
-  
+
+//no need to define user's and computer's choices again, just assigning here
+  text = (prompt("Please enter your choice: e.g. rock, paper or scissors")); //user enters choice in a pop-up box
+  playerSelection = text.toLowerCase(); // case-insensitive player choice
+  computerSelection = computerPlay();//update computerSelection
+
 }
