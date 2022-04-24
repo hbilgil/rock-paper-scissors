@@ -70,3 +70,8 @@ console.log("Your score: " + humanScore + " " + "Computer score: " + computerSco
 
 function game() {
 }
+
+//--new for...in Loop for an iteration--
+for (let i = 0; i < 4; i++) {
+  
+}
