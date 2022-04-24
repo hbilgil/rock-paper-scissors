@@ -69,7 +69,6 @@ console.log("Your score: " + humanScore + " " + "Computer score: " + computerSco
 //Final result and score will be defined too
 
 function game() {
-}
 
 //--new for...in Loop for an iteration--
 for (let i = 0; i < 4; i++) {
@@ -89,4 +88,26 @@ for (let i = 0; i < 4; i++) {
 }
 
 //New variable should be defined for the game result
-let totalScore = humanScore + computerScore;
+let totalScore = humanScore + computerScore; //Final score is the sum of the user's and computer's scores
+
+//--new conditional for comparison--
+
+//User will win the game if below mentioned conditions occur
+if (humanScore>computerScore && totalScore != 0){
+  return "Congratulations, You Won this game!\n-----END OF THE GAME-----";
+}
+//User will lose the game if below mentioned conditions occur
+  else if (humanScore<computerScore && totalScore != 0){
+    return "Unfortunately, You Lost this game!\n-----END OF THE GAME-----";
+  }
+//Neither side will win or lose the game if below mentioned conditions occur
+  else if (humanScore==computerScore && totalScore != 0) {
+    return "Upss, This game is a tie!\n-----END OF THE GAME-----"
+  }
+//User should be warned at the end of the game if he/she does not enter a value or makes a choice other than rock, paper or scissors in each round played
+  else {
+    return "Sorry, You should make a meaningful choice: e.g. rock, paper or scissors";
+  }
+  
+}
+
