@@ -77,6 +77,13 @@ for (let i = 0; i < 4; i++) {
 //no need to define user's and computer's choices again, just assigning here
   text = (prompt("Please enter your choice: e.g. rock, paper or scissors")); //user enters choice in a pop-up box
   playerSelection = text.toLowerCase(); // case-insensitive player choice
-  computerSelection = computerPlay();//update computerSelection
+  console.log (`You choose ${playerSelection}`); //show user's choice in lowercase letters
+
+  computerSelection = computerPlay(); //update computer's choice
+  console.log(`The computer chooses ${computerSelection}`); //show computer's choice
+
+  console.log(playRound(playerSelection, computerSelection)); //Single round result will be shown again and again until the end
+
+  console.log("Your score: " + humanScore + " " + "Computer score: " + computerScore);//The score will be counted again and again
 
 }
