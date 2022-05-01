@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html {
   /* footer support */
   position: relative;
@@ -37,7 +45,7 @@ button {
 }
 
 .title {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 10px;
   color: #ffb900;
 }
@@ -49,6 +57,7 @@ button {
   
 .roundScore {
   margin-bottom: 15px;
+  margin-top: 15px;
 }
   
 .roundScore-info {
@@ -58,6 +67,7 @@ button {
 .roundScore-message {
   font-size: 20px;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .scores-container {
@@ -87,6 +97,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 30px;
+  margin: 60px;
 }
   
 .btn {
@@ -129,48 +140,54 @@ button {
   color: #ddd;
   font-size: 20px;
 }
-  
-.fa-github {
-  color: #ddd;
-  font-size: 24px;
-  transition: transform 0.3s ease-in-out;
+
+
+/* Endgame Messages */
+
+.finalMessage {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #222831;
+    text-align: center;
+    font-size: 30px;
+    user-select: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
 }
   
-.fa-github:hover {
-  transform: rotate(360deg) scale(1.2);
+.finalMessage.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+.message-title {
+    font-size: 40px;
+}
+  
+.btn-restart {
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+  
+.finalWindow {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+  
+.finalWindow.active {
+    display: block;
 }
 
 
 
-
-
-.userClick {
-    border: 1px solid #ffb900;
-    -webkit-box-shadow: 0px 1px 5px 0px #ffb900;
-            box-shadow: 0px 1px 5px 0px #ffb900;
-    -webkit-transition: all 2s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-}
-
-.computerPick {
-    border: 1px solid #ffb900;
-    -webkit-box-shadow: 0px 1px 5px 0px #ffb900;
-            box-shadow: 0px 1px 5px 0px #ffb900;
-    -webkit-transition: all 2s ease;
-    -o-transition: all 2s ease;
-    transition: all 2s ease;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-}
-
-.refresh {
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 15px 7px;
-    width: 50%;
-}
