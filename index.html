@@ -2,10 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Rock - Paper - Scissors</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
 </head>
 <body>
 
+  <header class="header">
+    <h1 class="title">ROCK PAPER SCISSORS</h1>
+  </header>
+
+  <main class="main">
+    <div class="mainboard">
+      <h2 class="game-info" id="gameInfo">Rock beats Scissors ︱ Paper beats Rock ︱ Scissors beats Paper</h2>
+      <h3 class="score-info" id="scoreInfo">
+        Whoever reaches the 5 points first, is the winner!
+      </h3>
+      
+      <div class="player-container">
+        <h2 class="player-label">You</h2>
+        <div class="user-container">
+
+          <div class="user-profile">
+            <div class="player-type">
+              <img src="img/user-solid-grey.svg" height="30px" />
+            </div>
+            <div>
+              <h3>Score</h3>
+              <h2 class="user-score">0</h2>
+            </div>
+          </div>
+
+          <div class="user-buttons">
+            <div class="rock-button" data-button="rock">
+                <img src="img/hand-rock-grey.svg" height="30px" />
+                <h3>Rock</h3>
+            </div>
+            <div class="paper-button" data-button="paper">
+                <img src="img/hand-paper-grey.svg" height="30px" />
+                <h3>Paper</h3 class="selection">
+            </div>
+            <div class="scissors-button" data-button="scissors">
+                <img src="img/hand-scissors-grey.svg" height="30px" />
+                <h3>Scissors</h3 class="selection">
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+      
+      <div class="player-container">
+        <h2 class="player-label">Computer</h2>
+        <div class="computer-container">
+
+          <div class="computer-profile">
+            <div class="player-type">
+              <img src="img/laptop-solid-grey.svg" height="30px" />
+            </div>
+            <div>
+              <h3>Score</h3>
+              <h2 class="computer-score">0</h2>
+            </div>
+          </div>
+
+          <div class="computer-buttons">
+            <div class="button computer-rock">
+              <img src="img/hand-rock-grey.svg" height="30px" />
+              <h3>Rock</h3>
+            </div>
+            <div class="button computer-paper">
+              <img src="img/hand-paper-grey.svg" height="30px" />
+              <h3>Paper</h3>
+            </div>
+            <div class="button computer-scissors">
+              <img src="img/hand-scissors-grey.svg" height="30px" />
+              <h3>Scissors</h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>  
+  </main>
+
+  <footer class="footer">
+    <p>
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+      Halil Bilgil
+    </p>
+    <a href="https://github.com/hbilgil" target="_blank">
+      <i class="fab fa-github"></i
+    ></a>
+  </footer>
+  
 </body>
 </html>
