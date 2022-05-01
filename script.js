@@ -73,37 +73,42 @@ function updateChoices(playerSelection, computerSelection) {
 
 /*--------------new function---------------------
 Define a function for updating scores of both sides
-User's & Computer's choices will be shown on the screen in each round
+User's & Computer's choices will be updated on the screen in each round
 ------------------------------------------------*/
 
 function updateScore() {
   if (roundWinner === 'tie') {
-    scoreInfo.textContent = "It's a tie!"
+    roundScoreInfo.textContent = 'This round is a tie!'
   } else if (roundWinner === 'player') {
-    scoreInfo.textContent = 'You won!'
+    roundScoreInfo.textContent = 'You won this round!'
   } else if (roundWinner === 'computer') {
-    scoreInfo.textContent = 'You lost!'
+    roundScoreInfo.textContent = 'You lost this round!'
   }
 
   playerScorePara.textContent = `Player: ${playerScore}`
   computerScorePara.textContent = `Computer: ${computerScore}`
 }
 
+/*--------------new function---------------------
+Define a function for updating score messages according to choices
+Score messages will be updated on the screen in each round
+------------------------------------------------*/
+
 function updateScoreMessage(winner, playerSelection, computerSelection) {
   if (winner === 'player') {
-    scoreMessage.textContent = `${capitalizeFirstLetter(
+    roundScoreMessage.textContent = `${capitalizeFirstLetter(
       playerSelection
     )} beats ${computerSelection.toLowerCase()}`
     return
   }
   if (winner === 'computer') {
-    scoreMessage.textContent = `${capitalizeFirstLetter(
+    roundScoreMessage.textContent = `${capitalizeFirstLetter(
       playerSelection
     )} is beaten by ${computerSelection.toLowerCase()}`
     return
   }
 
-  scoreMessage.textContent = `${capitalizeFirstLetter(
+  roundScoreMessage.textContent = `${capitalizeFirstLetter(
     playerSelection
   )} ties with ${computerSelection.toLowerCase()}`
 }
