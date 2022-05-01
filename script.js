@@ -77,12 +77,12 @@ User's & Computer's choices will be updated on the screen in each round
 ------------------------------------------------*/
 
 function updateScore() {
-  if (roundWinner === 'tie') {
-    roundScoreInfo.textContent = 'This round is a tie!'
-  } else if (roundWinner === 'player') {
+  if (roundWinner === 'player') {
     roundScoreInfo.textContent = 'You won this round!'
   } else if (roundWinner === 'computer') {
     roundScoreInfo.textContent = 'You lost this round!'
+  } else {
+    roundScoreInfo.textContent = 'This round is a tie!'
   }
 
   playerScorePara.textContent = `Player: ${playerScore}`
@@ -95,21 +95,21 @@ Score messages will be updated on the screen in each round
 ------------------------------------------------*/
 
 function updateScoreMessage(winner, playerSelection, computerSelection) {
-  if (winner === 'player') {
+  if (roundWinner === 'player') {
     roundScoreMessage.textContent = `${capitalizeFirstLetter(
       playerSelection
     )} beats ${computerSelection.toLowerCase()}`
     return
   }
-  if (winner === 'computer') {
+    else if (roundWinner === 'computer') {
     roundScoreMessage.textContent = `${capitalizeFirstLetter(
       playerSelection
     )} is beaten by ${computerSelection.toLowerCase()}`
     return
   }
-
-  roundScoreMessage.textContent = `${capitalizeFirstLetter(
-    playerSelection
+    else {
+    roundScoreMessage.textContent = `${capitalizeFirstLetter(
+      playerSelection
   )} ties with ${computerSelection.toLowerCase()}`
 }
 
