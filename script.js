@@ -1,6 +1,8 @@
-//--------------new function---------------------
-//Define a function allowing the computer make a choice among rock, paper and scissors
-//Computer choice is triggered by function defined
+
+/*--------------new function---------------------
+Define a function allowing the computer make a choice among rock, paper and scissors
+Computer choice is triggered by function defined
+------------------------------------------------*/
 
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"] //An array form will be fine for random choice
@@ -8,9 +10,10 @@ function computerPlay() {
   return result;
 }
 
-//--------------new function---------------------
-//Define a function for a single round in the game
-//User's choice will be compared by computer's selection
+/*--------------new function---------------------
+Define a function for a single round in the game
+User's choice will be compared by computer's selection
+------------------------------------------------*/
 
 function playRound(playerSelection, computerSelection) { //2 different parameters will be used for the comparison inside the function
   
@@ -37,6 +40,75 @@ function playRound(playerSelection, computerSelection) { //2 different parameter
   }
 }
 
+/*--------------new function---------------------
+Define a function for updating choices of both sides
+User's & Computer's choices will be shown on the screen in each round
+------------------------------------------------*/
+
+function updateChoices(playerSelection, computerSelection) {
+  switch (playerSelection) {
+    case 'rock':
+      playerChoice.textContent = '✊'
+      break
+    case 'paper':
+      playerChoice.textContent = '✋'
+      break
+    case 'scissors':
+      playerChoice.textContent = '✌'
+      break
+  }
+
+  switch (computerSelection) {
+    case 'rock':
+      computerChoice.textContent = '✊'
+      break
+    case 'paper':
+      computerChoice.textContent = '✋'
+      break
+    case 'scissors':
+      computerChoice.textContent = '✌'
+      break
+  }
+}
+
+/*--------------new function---------------------
+Define a function for updating scores of both sides
+User's & Computer's choices will be shown on the screen in each round
+------------------------------------------------*/
+
+function updateScore() {
+  if (roundWinner === 'tie') {
+    scoreInfo.textContent = "It's a tie!"
+  } else if (roundWinner === 'player') {
+    scoreInfo.textContent = 'You won!'
+  } else if (roundWinner === 'computer') {
+    scoreInfo.textContent = 'You lost!'
+  }
+
+  playerScorePara.textContent = `Player: ${playerScore}`
+  computerScorePara.textContent = `Computer: ${computerScore}`
+}
+
+function updateScoreMessage(winner, playerSelection, computerSelection) {
+  if (winner === 'player') {
+    scoreMessage.textContent = `${capitalizeFirstLetter(
+      playerSelection
+    )} beats ${computerSelection.toLowerCase()}`
+    return
+  }
+  if (winner === 'computer') {
+    scoreMessage.textContent = `${capitalizeFirstLetter(
+      playerSelection
+    )} is beaten by ${computerSelection.toLowerCase()}`
+    return
+  }
+
+  scoreMessage.textContent = `${capitalizeFirstLetter(
+    playerSelection
+  )} ties with ${computerSelection.toLowerCase()}`
+}
+
+
 //Function playRound() Parameters should be defined
 //A pop-up box will be provided for the user enter his/her choice
 
@@ -51,6 +123,7 @@ console.log(`The computer chooses ${computerSelection}`);//show computer's choic
 
 let humanScore = 0;
 let computerScore = 0;
+let roundWinner ='';
 
 //Round-game result variables should be defined
 
