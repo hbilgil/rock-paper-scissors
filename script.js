@@ -62,9 +62,9 @@ const endgameMsg = document.getElementById('endgameMsg');
 const overlay = document.getElementById('overlay');
 const restartBtn = document.getElementById('restartBtn');
 
-rockButton.addEventListener('click', () => handleClick('ROCK'))
-paperButton.addEventListener('click', () => handleClick('PAPER'))
-scissorsButton.addEventListener('click', () => handleClick('SCISSORS'))
+rockButton.addEventListener('click', () => pushClick('ROCK'))
+paperButton.addEventListener('click', () => pushClick('PAPER'))
+scissorsButton.addEventListener('click', () => pushClick('SCISSORS'))
 restartBtn.addEventListener('click', restartGame)
 overlay.addEventListener('click', closeEndgameModal)
 
@@ -77,6 +77,29 @@ side has reached at 5 points
 function isGameOver() {
   return playerScore === 5 || computerScore === 5
 }
+
+
+/*--------------new function---------------------
+Define a function allowing the player make a choice
+------------------------------------------------*/
+
+function pushClick(playerSelection) {
+  if (isGameOver()) {
+    openEndgameMessage();
+    return;
+  }
+
+  computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection)
+  updateChoices(playerSelection, computerSelection)
+  updateScore()
+
+  if (isGameOver()) {
+    openEndgameMessage();
+    setFinalMessage();
+  }
+}
+
 
 /*--------------new function---------------------
 Define a function for updating choices of both sides
