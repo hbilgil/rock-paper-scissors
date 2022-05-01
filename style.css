@@ -1,0 +1,176 @@
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+body { 
+  background-color: #222831;
+  color: #ddd;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 2em;
+  margin: 10px;
+  color: #ffb900;
+}
+
+.main {
+  margin-top: 20px;
+  text-align: center;
+}
+  
+.roundScore {
+  margin-bottom: 15px;
+}
+  
+.roundScore-info {
+  font-size: 32px;
+}
+
+.roundScore-message {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.scores-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px dotted #e5e5e5;
+  border-radius: 15px;
+}
+  
+.score-box {
+  width: 170px;
+}
+  
+.score {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+  
+.btn {
+  border-radius: 10px;
+  background-color: #393e46;
+}
+
+.btn-square {
+  width: 160px;
+  height: 160px;
+}
+
+.btn:hover {
+  background-color: #4a4f57;
+  border: 1px solid #ffb900;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 5px 0px #ffb900;
+          box-shadow: 0px 1px 5px 0px #ffb900;
+}
+    
+.btn:active {
+  background-color: #5b5f68;
+}
+
+.choice {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  color: #ddd;
+  font-size: 20px;
+}
+  
+.fa-github {
+  color: #ddd;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+  
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+
+
+
+
+.userClick {
+    border: 1px solid #ffb900;
+    -webkit-box-shadow: 0px 1px 5px 0px #ffb900;
+            box-shadow: 0px 1px 5px 0px #ffb900;
+    -webkit-transition: all 2s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.computerPick {
+    border: 1px solid #ffb900;
+    -webkit-box-shadow: 0px 1px 5px 0px #ffb900;
+            box-shadow: 0px 1px 5px 0px #ffb900;
+    -webkit-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.refresh {
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 15px 7px;
+    width: 50%;
+}
