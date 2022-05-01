@@ -48,7 +48,7 @@ let computerSelection = computerPlay();  //declaring a randomly selected choice 
 // UI DOM manipulations and event listeners
 
 const roundScoreInfo = document.getElementById('roundScoreInfo');
-const scoreMessage = document.getElementById('roundScoreMessage');
+const roundScoreMessage = document.getElementById('roundScoreMessage');
 const playerScorePara = document.getElementById('playerScore');
 const computerScorePara = document.getElementById('computerScore');
 const playerChoice = document.getElementById('playerChoice');
@@ -77,7 +77,6 @@ function isGameOver() {
   return playerScore === 5 || computerScore === 5
 }
 
-
 /*--------------new function---------------------
 Define a function allowing the player make a choice
 ------------------------------------------------*/
@@ -100,7 +99,23 @@ function pushClick(playerSelection) {
 }
 
 /*--------------new function---------------------
-Define a function allowing the player make a choice
+Define a function for restarting the game
+------------------------------------------------*/
+function restartGame() {
+  playerScore = 0;
+  computerScore = 0;
+  roundScoreInfo.textContent = 'Choose your weapon';
+  roundScoreMessage.textContent = 'First to score 5 points wins the game';
+  playerScorePara.textContent = 'Player: 0';
+  computerScorePara.textContent = 'Computer: 0';
+  playerChoice.textContent = '❔';
+  computerChoice.textContent = '❔';
+  endgameMessage.classList.remove('active');
+  finalWindow.classList.remove('active');
+}
+
+/*--------------new function---------------------
+Define 3 bonded functions allowing the player restart the game
 ------------------------------------------------*/
 
 function openEndgameMessage() {
@@ -118,7 +133,6 @@ function setFinalMessage() {
     ? (endgameMsg.textContent = 'Congratulations, You Won this game!')
     : (endgameMsg.textContent = 'Unfortunately, You Lost this game!')
 }
-
 
 /*--------------new function---------------------
 Define a function for updating choices of both sides
@@ -200,47 +214,3 @@ Define a function for making a string's first letter capitalized
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 }
-
-/*--------------new function---------------------
-Define a function for looping a game until  
-either player or computer reaches at 5 points
-Final result and score will be defined too
-------------------------------------------------*/
-
-function game() {
-
-//--new for...in Loop for an iteration--
-
-for (let i = 0; i < 4; i++) {
-
-//no need to define user's and computer's choices again, just assigning here
-
-  text = (prompt("Please enter your choice: e.g. rock, paper or scissors")); //user enters choice in a pop-up box
-  playerSelection = text.toLowerCase(); // case-insensitive player choice
-  console.log (`You choose ${playerSelection}`); //show user's choice in lowercase letters
-
-  computerSelection = computerPlay(); //update computer's choice
-  console.log(`The computer chooses ${computerSelection}`); //show computer's choice
-
-  console.log(playRound(playerSelection, computerSelection)); //Single round result will be shown again and again until the end
-
-  console.log("Your score: " + humanScore + " " + "Computer score: " + computerScore);//The score will be counted again and again
-
-}
-
-//--new conditional for comparison--
-
-//User will win the game if below mentioned conditions occur
-if (humanScore>computerScore){
-  return "Congratulations, You Won this game!\n-----END OF THE GAME-----";
-}
-//User will lose the game if below mentioned conditions occur
-  else (humanScore<computerScore){
-    return "Unfortunately, You Lost this game!\n-----END OF THE GAME-----";
-  }
-
-//Showing the Final game results in the console
-
-console.log(game()); //play the loop
-
-console.log("YOUR FINAL SCORE: " + humanScore + " " + "COMPUTER'S FINAL SCORE: " + computerScore);
