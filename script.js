@@ -56,17 +56,16 @@ const computerChoice = document.getElementById('computerChoice');
 const rock = document.getElementById('rockButton');
 const paper = document.getElementById('paperButton');
 const scissors = document.getElementById('scissorsButton');
-
-const endgameModal = document.getElementById('endgameModal');
+const endgameMessage = document.getElementById('endgameMessage');
 const endgameMsg = document.getElementById('endgameMsg');
-const overlay = document.getElementById('overlay');
+const finalWindow = document.getElementById('finalWindow');
 const restartBtn = document.getElementById('restartBtn');
 
 rockButton.addEventListener('click', () => pushClick('ROCK'))
 paperButton.addEventListener('click', () => pushClick('PAPER'))
 scissorsButton.addEventListener('click', () => pushClick('SCISSORS'))
 restartBtn.addEventListener('click', restartGame)
-overlay.addEventListener('click', closeEndgameModal)
+finalWindow.addEventListener('click', closeEndgameMessage)
 
 
 /*--------------new function---------------------
@@ -98,6 +97,26 @@ function pushClick(playerSelection) {
     openEndgameMessage();
     setFinalMessage();
   }
+}
+
+/*--------------new function---------------------
+Define a function allowing the player make a choice
+------------------------------------------------*/
+
+function openEndgameMessage() {
+  endgameMessage.classList.add('active')
+  finalWindow.classList.add('active')
+}
+
+function closeEndgameMessage() {
+  endgameMessage.classList.remove('active')
+  finalWindow.classList.remove('active')
+}
+
+function setFinalMessage() {
+  return playerScore > computerScore
+    ? (endgameMsg.textContent = 'Congratulations, You Won this game!')
+    : (endgameMsg.textContent = 'Unfortunately, You Lost this game!')
 }
 
 
@@ -209,30 +228,16 @@ for (let i = 0; i < 4; i++) {
 
 }
 
-//New variable should be defined for the game result
-
-let totalScore = humanScore + computerScore; //Final score is the sum of the user's and computer's scores
-
 //--new conditional for comparison--
 
 //User will win the game if below mentioned conditions occur
-if (humanScore>computerScore && totalScore != 0){
+if (humanScore>computerScore){
   return "Congratulations, You Won this game!\n-----END OF THE GAME-----";
 }
 //User will lose the game if below mentioned conditions occur
-  else if (humanScore<computerScore && totalScore != 0){
+  else (humanScore<computerScore){
     return "Unfortunately, You Lost this game!\n-----END OF THE GAME-----";
   }
-//Neither side will win or lose the game if below mentioned conditions occur
-  else if (humanScore==computerScore && totalScore != 0) {
-    return "Upss, This game is a tie!\n-----END OF THE GAME-----"
-  }
-//User should be warned at the end of the game if he/she does not enter a value or makes a choice other than rock, paper or scissors in each round played
-  else {
-    return "Sorry, You should make a meaningful choice: e.g. rock, paper or scissors";
-  }
-
-}
 
 //Showing the Final game results in the console
 
